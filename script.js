@@ -30,3 +30,27 @@ const clueAnswers = {
     "Rope"
 ]
 };
+
+let answer = [];
+
+for (prop in clueAnswers) {
+    let clueIndex = randomNumber(clueAnswers[prop].length)
+
+    switch(prop) {
+        case 'person':
+            answer.push(`It was ${clueAnswers[prop][clueIndex]}`);
+            break;
+        case 'place': 
+            answer.push(`In the ${clueAnswers[prop][clueIndex]}`);
+            break;
+        case 'thing':
+            answer.push(`With the ${clueAnswers[prop][clueIndex]}.`)
+    }
+}
+
+const formatAnswer = answerSet => {
+    const formatted = answer.join('\n')
+    console.log(formatted)
+}
+
+formatAnswer(answer);
